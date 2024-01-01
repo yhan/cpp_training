@@ -2,10 +2,10 @@
 #include <string>
 
 class Person {
+
 private:
-
-
-    std::string name;
+    std::string &name; // ctor will get a reference to ctor parameter name
+    //std::string name; // ctor will get a copy
     int age;
 
 public:
@@ -25,4 +25,10 @@ public:
     std::string *getNameBadIfPersonGetDestroyedThe_namePtr_PointsToDeallocatedMemory();
 
     void displayInfo();
+
+    // destructor is in header file, not impl
+    ~Person(){
+        name.clear();
+        std::cout << "destr: name='" << name << "'" << std::endl;
+    }
 };

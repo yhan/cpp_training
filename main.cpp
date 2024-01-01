@@ -4,24 +4,26 @@
 //#include <limits>
 
 #include "Person.h"
+#include "Person2.h"
 
 using namespace std;
 
 int main() {
 
     std::string name = "Alice";
-    int age = 30;
-    auto p = new Person(name, age);
-
-    string *namePtr = p->getNameBadIfPersonGetDestroyedThe_namePtr_PointsToDeallocatedMemory();
-    cout << *namePtr; // deference the pointer to get the name
-
-    auto gotName = p->getName();
-    cout << "name is: " << name;
-
+    auto* p = new Person(name, 42);
+    auto backup = *p;
     p->displayInfo();
+    name = "Alice Modif";
+    p->displayInfo();
+    delete p;
 
-    //Person person2;
+    // destructor: is called after delete...
+
+    std::cout << "after deleted person, name=" << name << endl;
+    std::cout << "p's name=" << backup.getName()  << endl;
+
+    // destructor: without delete it is called here.
 
     return 0;
 }

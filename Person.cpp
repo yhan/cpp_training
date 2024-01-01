@@ -10,7 +10,7 @@
 * */
 //Person::Person(const std::string& n, int a): name(n), age(a){}
 
-Person::Person(std::string &n, int a) :name(std::move(n)), age(a) {}
+Person::Person(std::string &n, int a) :name(n), age(a) {}
 
 /* Benefit of initializer:
 *
@@ -48,4 +48,3 @@ std::string * Person::getNameBadIfPersonGetDestroyedThe_namePtr_PointsToDealloca
 void Person::displayInfo()  {
     std::cout << "Name: " << Person::name << ", Age: " << Person::age << std::endl;
 }
-
