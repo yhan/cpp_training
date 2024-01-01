@@ -8,13 +8,20 @@
 using namespace std;
 
 int main() {
-    auto* p = new Person("hllo", 24);
-    string* namePtr = p->getNameBadIfPersonGetDesdroyedThe_namePtr_PoninsToDeallocatedMemory();
+
+    std::string name = "Alice";
+    int age = 30;
+    auto p = new Person(name, age);
+
+    string *namePtr = p->getNameBadIfPersonGetDestroyedThe_namePtr_PointsToDeallocatedMemory();
     cout << *namePtr; // deference the pointer to get the name
 
-    string name = p->getName();
+    auto gotName = p->getName();
     cout << "name is: " << name;
 
-    p->salary = 1000;
+    p->displayInfo();
+
+    //Person person2;
+
     return 0;
 }

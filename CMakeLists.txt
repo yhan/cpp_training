@@ -22,5 +22,4 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/make_heap" "${PROJECT_SOURCE_DIR}/make_h
 add_executable(untitled main.cpp
         Person.cpp
         Person.h
-        PersonImpl.cpp
-        PersonImpl.h)
+)
