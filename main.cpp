@@ -3,8 +3,8 @@
 #include <memory> // To include smart pointers
 //#include <limits>
 
-#include "Person.h"
-#include "Person2.h"
+#include "classSample/Person.h"
+#include "classSample/Person2.h"
 
 using namespace std;
 

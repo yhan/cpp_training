@@ -28,3 +28,11 @@ Boolean
   * bool
 Auto
   * ask compiler to deduce the type, still strongly typed
+
+## Clion build troubleshoot
+1. Problem: Compile | cannot build cache
+   ````
+   cd C:\Users\hanyi\CLionProjects\untitled\ rmdir /S /Q cmake-build-debug 
+   
+   ````
+   File > Invalidate cache (will restart Clion)
