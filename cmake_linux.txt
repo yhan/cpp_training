@@ -1,0 +1,74 @@
+# windows
+installed
+https://code.visualstudio.com/docs/cpp/config-mingw#_installing-the-mingww64-toolchain
+
+# linux (wsl)
+apt install cmake
+apt install make
+apt install g++
+apt install gdb
+
+
+create CMakeLists.txt
+------------------------------
+
+cmake_minimum_required(VERSION 3.16.3)
+
+project(OLAS)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+
+main.cpp
+------------------------------
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
+
+    for (const string& word : msg)
+    {
+        cout << word << " ";
+    }
+    cout << endl;
+}
+
+
+root@DESKTOP-QA0VSA0:/home/yhan/src/cpp# cmake -S . -B out/build/
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yhan/src/cpp/out/build
+
+
+cd out/build/
+make
+
+
+root@DESKTOP-QA0VSA0:/home/yhan/src/cpp/out/build# make
+Scanning dependencies of target OLAS
+[ 50%] Building CXX object CMakeFiles/OLAS.dir/main.cpp.o
+[100%] Linking CXX executable OLAS
+[100%] Built target OLAS
+
+Run the program
+./OLAS
